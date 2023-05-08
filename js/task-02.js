@@ -7,13 +7,13 @@ const ingredients = [
   'Condiments',
 ];
 
-const ulList = document.querySelector("ul");
-console.log(ulList)
+const list = document.getElementById('ingredients');
 
-for(const ingredient of ingredients) {
-  const liEl = document.createElement("li");
-  liEl.textContent = ingredient;
-  ulList.append(liEl);
-}
+const listArray = ingredients.map(ingredient => {
+  const listItem = document.createElement('li');
+  listItem.textContent = ingredient;
+  listItem.classList.add('list');
+  return listItem
+});
 
-document.body.append(ulList);
+list.append(...listArray)
